@@ -16,7 +16,7 @@
 //
 //     var fileStream = new FileStream("asdf.txt", FileMode.Append);
 //     var asyncStreamLogger =
-//         AsyncLogger.Create(StreamLogger.Create(fileStream));
+//         AsyncLogger.Create(StreamLogWriter.Create(fileStream));
 //     asyncStreamLogger.Error("Test error message");
 //     asyncStreamLogger.Stop();
 //

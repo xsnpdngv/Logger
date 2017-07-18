@@ -1,4 +1,4 @@
-﻿// @file     logger.cs
+// @file     logger.cs
 // @brief    Simple logger library
 // @details  Test excercise for Senior Developer job application to Nexogen
 // @author   Tamas Dezso <dezso.t.tamas@gmail.com>
@@ -53,6 +53,12 @@ namespace Nexogen.Logger.TDezso
         void Stop();
     }
 
+    // ----- Log writer interface ---------------------------------------------
+    public interface ILogWriter
+    {
+        // Writes log to output
+        void WriteLog(LogEntry logEntry);
+    }
 
     // ----- Logging/message importance levels --------------------------------
     public enum LogLevel
@@ -88,7 +94,7 @@ namespace Nexogen.Logger.TDezso
     }
 
 
-    // ----- BaseLogger class (abstract) --------------------------------------
+    // ----- Base logger class (abstract) -------------------------------------
     abstract public class BaseLogger : ILogger
     {
         // Log messages at appropriate importance level
@@ -112,7 +118,7 @@ namespace Nexogen.Logger.TDezso
         protected ILogWriter _logWriter;
     }
 
-    // ----- SyncLogger class -------------------------------------------------
+    // ----- Synchronous logger class -----------------------------------------
     public class SyncLogger : BaseLogger, ILogger
     {
         // Constructor
@@ -195,13 +201,6 @@ namespace Nexogen.Logger.TDezso
         private Thread _consumerThread;
     }
 
-
-    // ----- Log writer interface ---------------------------------------------
-    public interface ILogWriter
-    {
-        // Writes log to output
-        void WriteLog(LogEntry logEntry);
-    }
 
     // ----- Console log writer class -----------------------------------------
     public class ConsoleLogWriter : ILogWriter

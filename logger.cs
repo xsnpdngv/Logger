@@ -1,6 +1,5 @@
 // @file     logger.cs
 // @brief    Simple logger library
-// @details  Test excercise for Senior Developer job application to Nexogen
 // @author   Tamas Dezso <dezso.t.tamas@gmail.com>
 // @date     July 13, 2017
 // @version  1.0
@@ -30,7 +29,7 @@ using System.IO;
 using System.Collections.Concurrent;
 using System.Threading;
 
-namespace Nexogen.Logger.TDezso
+namespace TDezso.Logger
 {
     // ----- Logger interface -------------------------------------------------
     public interface ILogger

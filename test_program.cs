@@ -1,4 +1,4 @@
-﻿using Nexogen.Logger.TDezso;
+using TDezso.Logger;
 
 namespace testProgram
 {
